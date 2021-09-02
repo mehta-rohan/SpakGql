@@ -1,0 +1,20 @@
+[
+  { CODE: 'AF', NAME: 'Africa' },
+  { CODE: 'AN', NAME: 'Antarctica' },
+  { CODE: 'AS', NAME: 'Asia' },
+  { CODE: 'EU', NAME: 'Europe' },
+  { CODE: 'NA', NAME: 'North America' },
+  { CODE: 'OC', NAME: 'Oceania' },
+  { CODE: 'SA', NAME: 'South America' }
+] data
+{
+  Code: 'AD',
+  Name: 'Andorra',
+  Native: 'Andorra',
+  Phone: '376',
+  Continent: 'Europe',
+  Capital: 'Andorra la Vella',
+  Currency: 'EUR',
+  Languages: 'ca'
+} data
+{ Code: 'af', Name: 'Afrikaans', Native: 'Afrikaans', Rtf: '' } data
