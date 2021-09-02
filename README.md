@@ -32,19 +32,26 @@ sample query
 {
   "data": {
     "Country": {
-      "name": "French Guiana",
-      "native": "Guyane française",
-      "phone": "594",
-      "continent": "South America",
-      "capital": "Cayenne",
-      "currency": "EUR",
+      "name": "Bosnia and Herzegovina",
+      "native": "Bosna i Hercegovina",
+      "phone": "387",
+      "continent": "Europe",
+      "capital": "Sarajevo",
+      "currency": "BAM",
       "languages": [
         {
-          "code": "fr",
-          "name": "French"
+          "code": "bs",
+          "name": "Bosnian"
+        },
+        {
+          "code": "hr",
+          "name": "Croatian"
+        },
+        {
+          "code": "sr",
+          "name": "Serbian"
         }
       ]
     }
   }
-}    
-    
+}
