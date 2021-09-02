@@ -81,7 +81,7 @@ const CountryType = new GraphQLObjectType({
 });
 
 
-let getResutlsFromDB = (args)=>{
+let getResutlsFromDB = (args) => {
 
     let element;
     let countryData = data.countries.filter((country) => {
@@ -90,28 +90,33 @@ let getResutlsFromDB = (args)=>{
     if (countryData.length > 0) {
         for (let index = 0; index < countryData.length; index++) {
             element = countryData[index];
-            // console.log(element);
-            let languages = element.Languages.split(",");
-            var lans = [];
+            // console.log("this ele", element);
+            if (!Array.isArray(element.Languages)) {
+                let languages = element.Languages ? element.Languages.split(",") : [""];
+                var lans = [];
+                for (let i = 0; i < languages.length; i++) {
+                    for (let j = 0; j < data.languages.length; j++) {
+                        // data.languages[j];
+                        var details = data.languages[j];
+                        // console.log(details['Code'],languages[i])
+                        if (details['Code'] == languages[i]) {
+                            console.log(details);
+                            details.code = details.Code;
+                            details.name = details.Name;
+                            // delete details.Native;
+                            // delete details.Rtf;
+                            // delete details.Code;
+                            // delete details.Name;
 
-            languages.filter(language => {
-                data.languages.filter(details => {
-                    // console.log(language, details['Code']);
-                    if (language == details['Code']) {
-                        console.log(details);
-                        details.code = details.Code;
-                        details.name = details.Name;
-                        delete details.Native;
-                        delete details.Rtf;
-                        delete details.Code;
-                        delete details.Name;
+                            lans.push(details);
+                        }
 
-                        lans.push(details);
                     }
-                    return true;
-                })
+
+                }
                 element['Languages'] = lans;
-            })
+            }
+
         }
         let {
             Name: name,
@@ -131,7 +136,7 @@ let getResutlsFromDB = (args)=>{
             currency,
             languages
         }
-    }else{
+    } else {
         return {};
     }
 }
